@@ -1,4 +1,4 @@
-package be.vdab.valueobjects;
+package be.vdab.util;
 
 import static org.junit.Assert.*;
 import java.math.BigDecimal;
