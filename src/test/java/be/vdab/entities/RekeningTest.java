@@ -35,4 +35,19 @@ public class RekeningTest {
 		assertEquals(0, BigDecimal.valueOf(3.7).compareTo(rekening.getSaldo()));
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void hetBedragVanEenStortingMagNietNulZijn() {
+		rekening.storten(BigDecimal.ZERO);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void hetBedragVanEenStortingMagNietNegatiefZijn() {
+		rekening.storten(BigDecimal.valueOf(-1));
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void hetBedragVanEenStortingMagNietNullZijn() {
+		rekening.storten(null);
+	}
+
 }
